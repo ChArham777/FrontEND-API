@@ -63,10 +63,29 @@ const ApiDataFetch = () => {
     <>
       <ul>
         {data.map((item) => (
-          <li key={item._id}>
-            {item.first_name} {item.last_name} {item.email} {item.gender}
-            <button onClick={() => handleDelete(item._id)}>Delete</button>
-            <button onClick={() => handleEdit(item._id, { first_name:"Arham" })}>
+          <li key={item._id} style={{ marginBottom: '10px', padding: '10px', border: '2px solid black', borderRadius: '5px' }}>
+            <span style={{ marginRight: '10px' }}>
+              <strong>ID:</strong> {item._id}
+            </span>
+            <span style={{ marginRight: '10px' }}>
+              <strong>Name:</strong> {item.first_name} 
+            </span>
+
+            <span style={{ marginRight: '10px' }}>
+              <strong>LastName:</strong>  {item.last_name}
+            </span>
+            
+            
+            <span style={{ marginRight: '10px' }}>
+              <strong>Email:</strong> {item.email}
+            </span>
+            <span style={{ marginRight: '10px' }}>
+              <strong>Gender:</strong> {item.gender}
+            </span>
+            <button style={{ marginLeft: '10px' }} onClick={() => handleDelete(item._id)}>
+              Delete
+            </button>
+            <button style={{ marginLeft: '10px' }} onClick={() => handleEdit(item._id, { first_name: 'Arham' })}>
               Edit
             </button>
           </li>
